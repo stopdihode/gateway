@@ -1,0 +1,26 @@
+name: hyperswap
+chain: ethereum
+network: hyperevm
+tradingTypes: [AMM]
+
+# how much the execution price is allowed to move unfavorably from the trade
+# execution price. It uses a rational number for precision.
+allowedSlippage: '1/100'
+
+# the maximum gas used to estimate gasCost for a hyperswap trade.
+gasLimitEstimate: 300000
+
+# how long a trade is valid in seconds. After time passes hyperswap will not
+# perform the trade, but the gas will still be sent.
+ttl: 60
+
+# For each swap, the maximum number of hops to consider.
+# Note: More hops will increase latency of the algorithm.
+maximumHops: 3
+
+contractAddresses:
+  ethereum:
+    hyperevm:
+      routerAddress: '0xb4a9C4e6Ea8E2191d2FA5B380452a634Fb21240A'
+      factoryAddress: '0x724412C00059bf7d6ee7d4a1d0D5cd4de3ea1C48'
+      quoterAddress: '0x4a6907aE3c5bbcC54829Fe64BA29dDb1A59C8E98' 

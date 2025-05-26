@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "chain": {
+      "type": "string"
+    },
+    "network": {
+      "type": "string"
+    },
+    "tradingTypes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowedSlippage": {
+      "type": "string",
+      "description": "How much the execution price is allowed to move unfavorably from the trade execution price. Uses a rational number for precision."
+    },
+    "gasLimitEstimate": {
+      "type": "number",
+      "description": "The maximum gas used to estimate gasCost for a hyperswap trade."
+    },
+    "ttl": {
+      "type": "number",
+      "description": "How long a trade is valid in seconds. After time passes hyperswap will not perform the trade, but the gas will still be sent."
+    },
+    "maximumHops": {
+      "type": "number",
+      "description": "For each swap, the maximum number of hops to consider. More hops will increase latency of the algorithm."
+    },
+    "contractAddresses": {
+      "type": "object",
+      "properties": {
+        "ethereum": {
+          "type": "object",
+          "properties": {
+            "hyperevm": {
+              "type": "object",
+              "properties": {
+                "routerAddress": {
+                  "type": "string",
+                  "description": "Address of the Hyperswap V2 Router contract"
+                },
+                "factoryAddress": {
+                  "type": "string",
+                  "description": "Address of the Hyperswap V2 Factory contract"
+                },
+                "quoterAddress": {
+                  "type": "string",
+                  "description": "Address of the Hyperswap V2 Multicall contract used for quotes"
+                }
+              },
+              "required": ["routerAddress", "factoryAddress", "quoterAddress"]
+            }
+          },
+          "required": ["hyperevm"]
+        }
+      },
+      "required": ["ethereum"]
+    }
+  },
+  "required": [
+    "name",
+    "chain",
+    "network",
+    "tradingTypes",
+    "allowedSlippage",
+    "gasLimitEstimate",
+    "ttl",
+    "maximumHops",
+    "contractAddresses"
+  ]
+} 

@@ -4,6 +4,7 @@ import { UniswapConfig } from './uniswap/uniswap.config';
 import { JupiterConfig } from './jupiter/jupiter.config';
 import { MeteoraConfig } from './meteora/meteora.config';
 import { RaydiumConfig } from './raydium/raydium.config';
+import { HyperswapConfig } from './hyperswap/hyperswap.config';
 import { logger } from '../services/logger';
 
 // Define the schema using Typebox
@@ -61,6 +62,11 @@ export const connectorsRoutes: FastifyPluginAsync = async (fastify) => {
           trading_types: ['clmm', 'swap'],
           available_networks: RaydiumConfig.config.availableNetworks,
         },
+        {
+          name: 'hyperswap',
+          trading_types: ['amm', 'swap'],
+          available_networks: HyperswapConfig.config.availableNetworks
+        }
       ];
 
       logger.info('Available connectors: ' + connectors.map(c => c.name).join(', '));

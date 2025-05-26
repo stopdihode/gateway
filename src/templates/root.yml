@@ -27,3 +27,7 @@ configurations:
   $namespace raydium:
     configurationPath: raydium.yml
     schemaPath: raydium-schema.json
+
+  $namespace hyperswap:
+    configurationPath: hyperswap.yml
+    schemaPath: hyperswap-schema.json

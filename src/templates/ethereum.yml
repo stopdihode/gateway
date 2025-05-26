@@ -62,6 +62,13 @@ networks:
     tokenListSource: conf/lists/polygon.json
     nativeCurrencySymbol: POL
     gasPriceRefreshInterval: 60
+  hyperevm:
+    chainID: 999
+    nodeURL: https://rpc.hyperliquid.xyz/evm
+    tokenListType: FILE
+    tokenListSource: conf/lists/hyperevm.json
+    nativeCurrencySymbol: HYPE
+    gasPriceRefreshInterval: 60
 
 # if you use the gas assumptions below, your wallet needs >0.1 ETH balance for gas
 gasLimitTransaction: 3000000
