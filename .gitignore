@@ -1,17 +1,38 @@
-/conf
-/logs
+# Dependencies
+/node_modules
+package-lock.json
+pnpm-lock.yaml
+
+# Environment and secrets
+.env
+.env.*
+*.env
+
+# Configuration
+/conf/wallets/**/*
+/conf/server.yml
+
+# Build and cache
 /dist
+/build
+/.cache
+/coverage
 /db
+/logs
+/certs
+
+# IDE and editors
 /.idea
 /*.iml
-package-lock.json
-/certs
-/coverage
-/node_modules
-/coverage
-**/.DS_Store
-**/gateway_files
-
-# VSCode
 .vscode/
 .history
+*.swp
+*.swo
+*~
+
+# OS files
+**/.DS_Store
+**/Thumbs.db
+
+# Project specific
+**/gateway_files
